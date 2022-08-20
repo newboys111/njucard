@@ -1,0 +1,112 @@
+page {
+	background-color: #F5F5F5;
+
+	--projectColor: #0061AE;
+	--projectColorLight: #0061AE;
+	--projectCompareColor: #FFCC01;
+
+	/*#### 父组件日历颜色定义*/
+	/* 整体颜色 */
+	--calendarPageColor: #fff;
+	/* 加重颜色*/
+	--calendarMainColor: #0061AE !important;
+	/* 加重的亮颜色 用于选中日期的数据小圆点 */
+	--calendarLightColor: #0061AE;
+}
+
+.bg-admin {
+	background-color: #2499f2;
+}
+
+.text-project {
+	color: var(--projectColor) !important;
+}
+
+.bg-project {
+	background-color: var(--projectColor) !important;
+}
+
+.bg-project.light {
+	color: var(--projectColor) !important;
+	background-color: var(--projectColorLight) !important;
+}
+
+.border-project {
+	border-color: var(--projectColor) !important;
+}
+
+.menu-project {
+	color: var(--projectColor) !important;
+}
+
+.tabs .tab {
+	font-size: 28rpx !important;
+}
+
+.tabs .cur {
+	color: var(--projectColor) !important;
+}
+
+.tabs .tab-menu.cur:after {
+	background-color: var(--projectColor) !important;
+}
+
+.load-project {
+	color: #8799a3 !important;
+}
+
+.padding-project {
+	padding-left: 25rpx !important;
+	padding-right: 25rpx !important;
+}
+
+.btn-project {
+	line-height: 80rpx;
+	height: 80rpx;
+	color: #fff;
+	background-color: var(--projectColor);
+}
+
+.phone-button {
+	color: var(--projectColor) !important;
+}
+
+.shadow-project {
+	box-shadow: unset;
+}
+
+.card-project,
+.main .list .item.card-project,
+.down .comm-list.menu.card-project,
+.article-box .article.card-project,
+.text-pic-list-box .item.card-project,
+.info-list-box .item.card-project,
+.main-content .content.card-project,
+.comm-list-box .item.card-project,
+.form-box.card-project,
+.bar .search-form {
+	border-radius: 10rpx !important;
+}
+
+.up-project {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.up-project image {
+	padding: 0;
+	width: 100%;
+	margin: 0;
+}
+
+.my-icon-project {
+	color: var(--projectColor) !important;
+	font-weight: bold;
+	font-size: 34rpx;
+}
+
+
+.comm-list-box {
+	padding: 20rpx 30rpx 30rpx 30rpx;
+}

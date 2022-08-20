@@ -1,0 +1,112 @@
+@import "../../../style/skin.wxss";
+
+.activity-list {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0rpx 20rpx 0rpx 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.activity-list .item {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	background-color: #fff;
+	border-radius: 20rpx;
+	margin-bottom: 20rpx;
+	position: relative;
+	padding: 20rpx 20rpx;
+}
+
+.activity-list .item .corner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	background-color: #347DFF;
+	color: #fff;
+	font-weight: normal !important;
+	padding: 5rpx 10rpx;
+	border-top-left-radius: inherit;
+	border-bottom-right-radius: inherit;
+	opacity: .9;
+	font-size: 22rpx;
+}
+
+.activity-list .item .top {
+	width: 100%;
+	display: flex;
+}
+
+.activity-list .item .left {
+	padding: 0;
+	margin-right: 20rpx;
+}
+
+.activity-list .item .left image {
+	width: 265rpx;
+	height: 185rpx;
+	border-radius: 10rpx;
+}
+
+.activity-list .item .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.activity-list .item .right .title {
+	font-size: 32rpx;
+	color: #000;
+	line-height: 1.5;
+	width: 100%;
+	font-weight: bold;
+	z-index: 9999999;
+	height: 100rpx;
+}
+
+.activity-list .item .right .line1 {
+	width: 100%;
+	font-size: 26rpx;
+	margin-top: 15rpx;
+	color: #999;
+}
+
+.activity-list .item .right .line2 {
+	width: 100%;
+	font-size: 26rpx;
+	margin-top: 5rpx;
+	color: #999;
+}
+
+.activity-list .item .bottom {
+	width: 100%;
+	font-size: 28rpx;
+	margin-top: 8rpx;
+	text-align: right;
+	margin-bottom: 10rpx;
+	padding-right: 10rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.activity-list .item .bottom .status {
+	color: #aaa;
+	border: 1rpx solid #aaa;
+	padding: 10rpx 20rpx;
+	border-radius: 30rpx;
+}
+
+.activity-list .item .bottom .status.comm {
+	color: var(--projectColor);
+	border: 1rpx solid var(--projectColor);
+	padding: 10rpx 20rpx;
+	border-radius: 30rpx;
+}

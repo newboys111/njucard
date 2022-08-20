@@ -1,0 +1,32 @@
+<template name="menuTpl"> 
+	<view class="tab-bar" >   
+		<view wx:if="{{returnHome}}" class="tab-bar-home" bindtap="url" data-type="relaunch"
+			data-url="/pages/home/index/home_index">
+			<text class="tab-bar-home-text icon-homefill text-grey"></text>
+		</view>
+
+		<view class="tab-bar-border"></view>
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/house/pages/default/index/default_index">
+			<image class="tab-icon" src="/projects/house/images/tabbar/service{{curMenu=='home_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='home_index'?'menu-project':''}}">服务</view>
+		</view> 
+
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/house/pages/task/my_list/task_my_list">
+			<image class="tab-icon" src="/projects/house/images/tabbar/task{{curMenu=='task'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='task'?'menu-project':''}}">报事报修</view>
+		</view> 
+
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/house/pages/activity/index/activity_index">
+			<image class="tab-icon" src="/projects/house/images/tabbar/activity{{curMenu=='activity_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='activity_index'?'menu-project':''}}">社区活动</view>
+		</view>  
+		 
+	 
+		<view class="tab-bar-item" bindtap="url" data-type="relaunch" data-url="/projects/house/pages/my/index/my_index">
+			<image class="tab-icon" src="/projects/house/images/tabbar/my{{curMenu=='my_index'?'_cur':''}}.png"></image>
+			<view class="tab-text {{curMenu=='my_index'?'menu-project':''}}">我的</view>
+		</view>
+
+
+	</view>
+</template>

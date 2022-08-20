@@ -1,0 +1,9 @@
+@import '../../../../../../style/public/admin.wxss';
+
+.main-admin {
+	padding: 30rpx 0rpx;
+}
+
+.admin-comm-list .item .info .info-item .title {
+	width: 210rpx;
+}

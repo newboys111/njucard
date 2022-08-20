@@ -1,0 +1,94 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+	<view class="main main-vote-detail">
+		<view class="header shadow-project">
+			<view class="line1">{{vote.VOTE_TITLE}}</view>
+			<view class="line2">投票时间：{{vote.time}}</view>
+			<view class="line2 {{vote.statusDesc=='进行中'?'text-green':''}}">投票状态：{{vote.statusDesc}}
+				<text class="text-grey text-normal margin-left-xs">
+					<text wx:if="{{vote.VOTE_CANCEL_SET==0}}">(投票不可取消)</text>
+					<text wx:if="{{vote.VOTE_CANCEL_SET==1}}">(投票可随时取消)</text>
+					<text wx:if="{{vote.VOTE_CANCEL_SET==2}}">(投票截止前可取消)</text>
+					</text>
+			</view>
+		</view>
+
+		<!-- vote begin -->
+		<view class="form-box margin-top">
+
+			<view class="padding text-project text-l text-bold">
+				{{vote.VOTE_TYPE==0?'单选投票':'多选投票'}} 
+			</view>
+
+			<radio-group wx:if="{{vote.VOTE_TYPE==0}}" class="block radio-open-set" bindchange="modelRadio">
+				<block wx:for="{{vote.VOTE_ITEM}}" wx:key="key">
+					<label>
+						<view class="form-group">
+							<radio value="{{index}}" checked="{{false}}" />
+							<view class="progress round striped">
+								<view wx:if="{{item.per==0}}" class="bg-{{item.color}}" style="width:{{item.per+'%'}}"></view>
+								<view wx:if="{{item.per>0}}" class="bg-{{item.color}}" style="width:{{item.per+'%'}}">{{item.per}}%</view>
+							</view>
+						</view>
+					</label>
+					<view class="title-desc">{{item.label}} <text class="text-grey">({{item.cnt}}票)</text></view>
+				</block>
+
+
+			</radio-group>
+
+			<checkbox-group wx:if="{{vote.VOTE_TYPE==1}}" class="block radio-open-set" bindchange="modelCheckbox">
+				<block wx:for="{{vote.VOTE_ITEM}}" wx:key="key">
+					<label>
+						<view class="form-group">
+							<checkbox value="{{index}}" checked="{{false}}" />
+							<view class="progress round striped">
+								<view wx:if="{{item.per==0}}" class="bg-{{item.color}}" style="width:{{item.per+'%'}}"></view>
+								<view wx:if="{{item.per>0}}" class="bg-{{item.color}}" style="width:{{item.per+'%'}}">{{item.per}}%</view>
+							</view>
+						</view>
+					</label>
+					<view class="title-desc">{{item.label}} <text class="text-grey">({{item.cnt}}票)</text></view>
+				</block>
+
+
+			</checkbox-group>
+			<view class="padding-bottom flex  vote-btn">
+				<button wx:if="{{vote.myVoteId}}" class="btn margin-top large bg-gray light">已有{{vote.VOTE_USER_CNT}}人投票，您已经投票</button>
+				<button wx:else class="btn margin-top large bg-gray light">已有{{vote.VOTE_USER_CNT}}人投票，您尚未投票</button>
+			</view>
+		</view>
+		<!-- vote END -->
+
+
+		<!--图文begin-->
+		<view class="article-box" wx:if="{{vote.VOTE_OBJ.desc && vote.VOTE_OBJ.desc.length>0}}">
+			<view class="article">
+				<view class="title margin-top-s text-l">投票须知</view>
+
+				<block wx:for="{{vote.VOTE_OBJ.desc}}" wx:key="key">
+					<view class="content" wx:if="{{item.type=='text'}}">
+						<text user-select="{{true}}">{{item.val}}</text>
+					</view>
+
+					<view class="pics" wx:if="{{item.type=='img'}}">
+						<image bindtap="url" data-type='img' data-url="{{item.val}}" show-menu-by-longpress="{{true}}" class="loading" mode='widthFix' lazy-load="true" src="{{item.val}}">
+						</image>
+					</view>
+				</block>
+			</view>
+		</view>
+		<!--图文END-->
+	</view>
+
+	<cmpt-detail mode="mode2" topBtnShow="{{topBtnShow}}" oid="{{vote._id}}" cate="{{vote.VOTE_CATE_NAME}}" title="{{vote.VOTE_TITLE}}" cover="{{vote.VOTE_OBJ.cover[0]}}" qr="{{vote.VOTE_QR}}" desc="来投上一票吧！" tag="{{vote.myVoteId?'已投票':''}}" bg="{{skin.PROJECT_COLOR}}">
+		<button bindtap="bindVoteTap" wx:if="{{vote.statusDesc=='进行中'&&!vote.myVoteId}}" class="clearbtn cmpt-biz-detail-mode2-btn bg-project text-white">马上投票</button>
+		<button bindtap="bindCancelVoteTap" wx:elif="{{vote.myVoteId}}" class="clearbtn cmpt-biz-detail-mode2-btn bg-grey light">取消投票</button>
+		<button wx:else class="clearbtn cmpt-biz-detail-mode2-btn bg-grey light">投票{{vote.statusDesc}}</button>
+
+	</cmpt-detail>
+
+
+</block>

@@ -1,0 +1,103 @@
+<view class="form-box shadow">
+	<view class="form-group">
+		<view class="title must">标题</view>
+	</view>
+
+	<view class="form-group">
+		<input placeholder="简短的标题" placeholder-class="phc" model:value="{{formTitle}}" focus="{{formTitleFocus}}" maxlength="50"></input>
+	</view>
+	<view wx:if="{{formTitleFocus}}" class="hint-desc error">{{formTitleFocus}}</view>
+
+
+	<view wx:if="{{cateIdOptions.length>1}}" class="form-group arrow" id="formCateId">
+		<view class="title must">分类</view>
+		<cmpt-picker id="cate-picker" sourceData="{{cateIdOptions}}" bind:select="url" data-type="picker" data-item="formCateId" item="{{formCateId}}"> </cmpt-picker>
+	</view>
+	<view wx:if="{{formCateIdFocus}}" class="hint-desc error">{{formCateIdFocus}}</view>
+
+	<view class="form-group">
+		<view class="title must">排序号<text class="text-grey text-normal margin-left-xs">(小的先显示)</text></view>
+		<input placeholder="排序号，小的先显示" type="number" placeholder-class="phc" model:value="{{formOrder}}" focus="{{formOrderFocus}}" maxlength="4"></input>
+	</view>
+	<view wx:if="{{formOrderFocus}}" class="hint-desc error">{{formOrderFocus}}</view>
+
+	<view class="form-group">
+		<view class="title must">人数上限<text class="text-grey text-normal margin-left-xs">(0为不限制)</text></view>
+		<input placeholder="请填写人数上限" type="number" placeholder-class="phc" model:value="{{formMaxCnt}}" focus="{{formMaxCntFocus}}" maxlength="5"></input>
+	</view>
+	<view wx:if="{{formMaxCntFocus}}" class="hint-desc error">{{formMaxCntFocus}}</view>
+
+	<view class="form-group arrow" id="formStart">
+		<view class="title must">开始时间</view>
+		<cmpt-picker-time mark="formStart" mode="fullminute" timeModeStep="5" bind:select="url" data-type="picker" data-item="formStart" endYear="2025" item="{{formStart}}">
+			<view class="form-text">{{formStart||'请选择'}}</view>
+		</cmpt-picker-time>
+	</view>
+	<view wx:if="{{formStartFocus}}" class="hint-desc error">{{formStartFocus}}</view>
+
+	<view class="form-group arrow" id="formEnd">
+		<view class="title must">结束时间</view>
+		<cmpt-picker-time mark="formEnd" mode="fullminute" timeModeStep="5" bind:select="url" data-type="picker" data-item="formEnd" endYear="2025" item="{{formEnd}}">
+			<view class="form-text">{{formEnd||'请选择'}}</view>
+		</cmpt-picker-time>
+	</view>
+	<view wx:if="{{formEndFocus}}" class="hint-desc error">{{formEndFocus}}</view>
+
+	<view class="form-group arrow" id="formStop">
+		<view class="title must">报名截止时间</view>
+		<cmpt-picker-time mark="formStop" mode="fullminute" timeModeStep="5" bind:select="url" data-type="picker" data-item="formStop" endYear="2025" item="{{formStop}}">
+			<view class="form-text">{{formStop||'请选择'}}</view>
+		</cmpt-picker-time>
+	</view>
+	<view wx:if="{{formStopFocus}}" class="hint-desc error">{{formStopFocus}}</view>
+
+	<view class="form-group" id="formAddress" bindtap="bindMapTap">
+		<view class="title must">活动地点 <text class="icon-location text-orange text-normal margin-left-xs">选择地图定位</text></view>
+		<view class="action">{{formAddress.length}}/500</view>
+	</view>
+	<view class="form-group align-start">
+		<textarea model:value="{{formAddress}}" placeholder-class="phc" placeholder="请填写活动地址" style="min-height:150rpx" auto-height="true" maxlength="500" focus="{{formAddressFocus}}" cursor-spacing="100"></textarea>
+	</view>
+	<view wx:if="{{formAddressFocus}}" class="hint-desc error">{{formAddressFocus}}</view>
+</view>
+
+<view class="form-box shadow">
+	<view class="form-group" id="formCheckSet">
+		<view class="title must">审核设置</view>
+		<cmpt-picker mark="checkSet" style="flex:1" model:item="{{formCheckSet}}" sourceDataStr="0=报名后不需要后台审核,1=报名后需要后台审核" />
+	</view>
+	<view wx:if="{{formCheckSetFocus}}" class="hint-desc error">{{formCheckSetFocus}}</view>
+
+	<view class="form-group" id="formCancelSet">
+		<view class="title must">取消设置</view>
+		<cmpt-picker mark="cancelSet" style="flex:1" model:item="{{formCancelSet}}" sourceDataStr="0=不可取消,1=随时可取消,2=报名截止前可取消" />
+	</view>
+	<view wx:if="{{formCancelSetFocus}}" class="hint-desc error">{{formCancelSetFocus}}</view>
+
+	<!--
+	<view class="form-group">
+		<view class="title must">是否公开展示报名名单</view>
+		<switch wx:if="{{formIsMenu}}" bindchange="switchModel" data-item="formIsMenu" class="green sm" checked="true">
+		</switch>
+		<switch wx:elif="{{!formIsMenu}}" bindchange="switchModel" data-item="formIsMenu" class="green sm">
+		</switch>
+	</view>-->
+
+</view>
+
+<view class="form-box shadow margin-top-xs">
+	<cmpt-form-show id="cmpt-form" mark="cmpt-form" source="admin" isCacheMatch="{{false}}" fields="{{fields}}" forms="{{formForms}}" isDefMatch="{{id?false:true}}">
+	</cmpt-form-show>
+</view>
+
+<view class="form-box shadow">
+	<view class="form-group">
+		<view class="title must">用户报名填写资料设置 <text class="text-grey text-normal">(共{{formJoinForms.length}}个字段)</text></view>
+	</view>
+	<cmpt-form-set id="form-set" bind:formset="bindJoinFormsCmpt" fields="{{formJoinForms}}" />
+</view>
+
+
+<button bindtap="bindFormSubmit" class="btn-admin margin-top-xs">提交</button>
+
+<view style="height:200rpx"></view>

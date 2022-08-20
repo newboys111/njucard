@@ -1,0 +1,50 @@
+<view wx:if="{{!_params}}" class="margin-top load loading text-l load-project"></view>
+<block wx:else>
+
+	<cmpt-comm-list wx:if="{{isLoad}}" type="activity-list" _params="{{_params}}" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" sortMenusDefaultIndex="0" route="activity/list" topBottom="120" isTotalMenu="{{true}}" placeholder="搜索" bind:list="bindCommListCmpt">
+		<!--
+	<view class="up-project">
+		<image mode="widthFix" lazy-load src="{{upImg}}" />
+	</view>
+	-->
+		<!-- List Begin -->
+		<view class="activity-list" wx:for="{{dataList.list}}" wx:key="key" bindtap="url" data-url="../detail/activity_detail?id={{item._id}}">
+			<view class="item shadow shadow-project margin-top-xs">
+				<view wx:if="{{item.ACTIVITY_ORDER==0}}" class="corner bg-project">置顶</view>
+				<view class="top">
+					<view class="left">
+						<image mode="aspectFill" lazy-load="{{true}}" class="loading" src="{{item.ACTIVITY_OBJ.cover[0]}}">
+						</image>
+					</view>
+
+					<view class="right">
+						<view class="title content-cut-two">{{item.ACTIVITY_TITLE}}</view>
+						<view class="line1">{{item.time}}</view>
+						<view wx:if="{{item.ACTIVITY_MAX_CNT==0}}" class="line2">报名人数：不限</view>
+						<view wx:else class="line2">报名人数：{{item.ACTIVITY_JOIN_CNT}}<text class="margin-left-xxs margin-right-xxs">/</text>{{item.ACTIVITY_MAX_CNT}}</view>
+					</view>
+				</view>
+				<view class="bottom">
+					<text class="text-grey">{{isShowCate?'#'+item.ACTIVITY_CATE_NAME:''}}</text>
+					<text wx:if="{{item.statusDesc=='报名中'}}" class="status comm">报名中</text>
+					<text wx:else class="status">{{item.statusDesc}}</text>
+				</view>
+
+			</view>
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+
+	</cmpt-comm-list>
+
+
+	<block wx:if="{{skin.IS_SUB}}">
+		<import src="../../tpls/menu_tpl.wxml" />
+		<template is="menuTpl" data="{{curMenu:'activity_index',returnHome:false}}" />
+	</block>
+
+</block>
