@@ -6,7 +6,9 @@
 -	业主投票：支持录入投票项目，业主按单选多选投票，后台查看投票结果等
 -	业主报修：业主通过提交报修内容，上传图片文字信息等，物业公司进行办理， 随时更新办理状态。 
 
- 
+ ![image](https://user-images.githubusercontent.com/88219472/185737166-baf90f1a-1eac-4a88-8fa5-efafccb7643c.png)
+![image](https://user-images.githubusercontent.com/88219472/185737171-f4ceaa5f-77f1-4867-8288-dbb54153a3c6.png)
+
 
 
 ## 技术运用
@@ -22,11 +24,13 @@
 - 如有疑问，欢迎骚扰联系我：开发交流，技术分享，问题答疑，功能建议收集，版本更新通知，安装部署协助，小程序开发定制等。
 - 俺的微信: 
  
+![image](https://user-images.githubusercontent.com/88219472/185737186-c7c9fb3e-de0c-41b1-848a-3f42d59c704f.png)
 
 
 
 ## 演示 
- 
+ ![image](https://user-images.githubusercontent.com/88219472/185737195-c8141229-326f-410b-9162-befca59dffc6.png)
+
 
 ## 安装
 
@@ -36,7 +40,34 @@
 
 
 ## 截图
- 
+![image](https://user-images.githubusercontent.com/88219472/185737200-5eba2096-bc82-49c0-baed-0559180a591c.png)
+![image](https://user-images.githubusercontent.com/88219472/185737205-9d4a63a7-f359-46ed-a09e-df3a9661c3bf.png)
+
+ ![image](https://user-images.githubusercontent.com/88219472/185737208-73a826fc-60f2-4d9e-a62b-d9aaf82ee4ef.png)
+![image](https://user-images.githubusercontent.com/88219472/185737209-cf7cb511-5a31-4108-846b-1d3a7fa6caf7.png)
+![image](https://user-images.githubusercontent.com/88219472/185737211-f70a8318-59e5-4c06-8bd0-6d75b857f83c.png)
+![image](https://user-images.githubusercontent.com/88219472/185737216-e91f5d8b-b11c-4aba-9163-6602a480e08c.png)
+![image](https://user-images.githubusercontent.com/88219472/185737217-74dca2bd-df33-4f0a-8bdc-06072ba72564.png)
+![image](https://user-images.githubusercontent.com/88219472/185737219-ec8cf241-72d4-4d56-a85c-50baa32b27c7.png)
+![image](https://user-images.githubusercontent.com/88219472/185737221-98b4af3d-bb5b-4cdd-97e3-572263fe140c.png)
+
 
 ## 后台管理系统截图 
 - 后台超级管理员默认账号:admin，密码123456，请登录后台后及时修改密码和创建普通管理员。
+![image](https://user-images.githubusercontent.com/88219472/185737225-e2e59745-da95-4672-bbbc-fe43438c2ba0.png)
+
+![image](https://user-images.githubusercontent.com/88219472/185737228-08714ad4-dcb1-4ebe-8a0b-3a6628cf9c45.png)
+![image](https://user-images.githubusercontent.com/88219472/185737231-2519f189-7618-4078-9512-c6e94acf9862.png)
+![image](https://user-images.githubusercontent.com/88219472/185737234-237529b5-7eac-49d4-8fe5-c1e33ce1f878.png)
+![image](https://user-images.githubusercontent.com/88219472/185737240-14011c1c-9d63-40ed-b6bd-1337083f50fa.png)
+![image](https://user-images.githubusercontent.com/88219472/185737243-3f8dce34-f3ff-4cea-bbd4-9b6770027245.png)
+![image](https://user-images.githubusercontent.com/88219472/185737246-08551d53-114f-40ff-83e1-4e0fef2597aa.png)
+
+![image](https://user-images.githubusercontent.com/88219472/185737258-d8c7edbb-115e-40dd-b738-4fad82695d7c.png)
+
+
+
+
+
+
+
