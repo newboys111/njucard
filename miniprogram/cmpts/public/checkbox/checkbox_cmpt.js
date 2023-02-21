@@ -9,7 +9,7 @@ Component({
 			type: Array,
 			value: [],
 		},
-		// 默认选中项的值数组  
+		// 默认选中项的值数 组  
 		itemMulti: {
 			type: Array,
 			value: [],
