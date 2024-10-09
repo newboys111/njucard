@@ -1,0 +1,157 @@
+@import "../../../../../style/public/detail.wxss";
+@import "../../../style/skin.wxss";
+
+.main-vote-detail {
+	width: 100%;
+	padding: 0;
+}
+
+.main-vote-detail .header {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	padding: 30rpx 30rpx 20rpx;
+}
+
+.main-vote-detail .header .line1 {
+	width: 100%;
+	font-weight: bold;
+	font-size: 36rpx;
+	color: #000;
+}
+
+.main-vote-detail .header .line2 {
+	width: 100%;
+	font-size: 30rpx;
+	color: #999;
+	margin-top: 15rpx;
+}
+
+.main-vote-detail .detail-content {
+	margin-top: 20rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	padding: 20rpx 30rpx;
+	margin-bottom: 20rpx;
+}
+
+.main-vote-detail .detail-content .item {
+	width: 100%;
+	display: flex;
+	border-bottom: 1rpx solid #eee;
+	padding: 30rpx 0;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.main-vote-detail .detail-content .item:last-child {
+	border-bottom: 0;
+}
+
+.main-vote-detail .detail-content .item .title {
+	width: 180rpx;
+	font-size: 30rpx;
+	color: #000;
+	margin-right: 30rpx;
+	font-weight: bold;
+}
+
+.main-vote-detail .detail-content .item .desc {
+	flex: 1;
+	font-size: 30rpx;
+	color: #666;
+}
+
+.main-vote-detail .article-box .article {
+	border-radius: 0rpx !important;
+	padding: 10rpx 30rpx 110rpx;
+}
+
+.footer {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 0;
+	background-color: #fff;
+	box-shadow: 0 -6rpx 8rpx rgba(114, 130, 138, 0.1);
+	z-index: 9999999;
+}
+
+.footer .inner {
+	width: 100%;
+	padding: 20rpx 30rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer .share,
+.footer .fav {
+	font-size: 35rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20rpx;
+}
+
+.footer .fav.cur {
+	color: #ff6b6b;
+}
+
+.footer .share .text-s,
+.footer .fav .text-s {
+	margin-top: 0rpx;
+	font-size: 24rpx;
+}
+
+
+.footer .svr {
+	width: 400rpx;
+	border-radius: 10rpx;
+	background-color: var(--projectColor);
+	line-height: 80rpx;
+	color: #fff;
+	z-index: 99999;
+	font-size: 32rpx;
+}
+
+.footer .svr.join {
+	background-color: var(--projectColor) !important;
+	color: #fff !important;
+}
+
+.progress {
+	height: 35rpx;
+	margin-left: 10rpx;
+}
+
+.progress view {
+	font-size: 24rpx;
+}
+
+.title-desc {
+	padding-left: 30rpx;
+	color: #333;
+	padding-bottom: 30rpx;
+	border-bottom: 1rpx solid #eee;
+}
+
+.form-box {
+	border-radius: 0;
+}
+
+.vote-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.vote-btn button{
+	height:60rpx!important;
+	font-weight: normal;
+}

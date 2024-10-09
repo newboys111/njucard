@@ -1,0 +1,50 @@
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list type="my_activity_join" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="activity/my_join_list" isTotalMenu="{{true}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索标题" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+
+		<!-- List Begin -->
+		<view class="text-pic-list-box padding-project">
+
+			<view class="item card-project shadow-project" wx:for="{{dataList.list}}" wx:key="index">
+				<view wx:if="{{item.isTimeout}}" class="status">已结束</view>
+				<view bindtap="url" data-url="../my_join_detail/activity_my_join_detail?id={{item._id}}" wx:elif="{{item.ACTIVITY_JOIN_STATUS==1}}" class="qr"><text class="icon-qrcode"></text></view>
+				<view class="title content-cut-two" bindtap="url" data-url="../detail/activity_detail?id={{item.ACTIVITY_JOIN_ACTIVITY_ID}}">{{item.activity.ACTIVITY_TITLE}}</view>
+				<view class="author">
+					<text class="icon-time margin-right-xs text-s"></text><text class="text-cut">{{item.time}}</text>
+				</view>
+
+				<view class="data">
+					<text wx:if="{{item.ACTIVITY_JOIN_STATUS==0}}" class="text-blue"><text class="icon-newshot margin-right-xxs"></text>待审核</text>
+
+					<text wx:if="{{item.ACTIVITY_JOIN_STATUS==1}}" class="text-green"><text class="icon-check margin-right-xxs"></text>报名成功{{item.ACTIVITY_JOIN_IS_CHECKIN==1?'，已签到':''}}</text>
+
+					<block wx:elif="{{item.ACTIVITY_JOIN_STATUS==99}}">
+						<text class="text-red"><text class="icon-roundclose margin-right-xxs"></text>审核未通过<text class="text-grey" wx:if="{{item.ACTIVITY_JOIN_REASON}}">：{{item.ACTIVITY_JOIN_REASON}}</text></text>
+					</block>
+
+				</view>
+
+				<view class="data data-button">
+					<button bindtap="url" data-url="../my_join_detail/activity_my_join_detail?id={{item._id}}" class="btn mid bg-gray text-black">查看详情</button>
+					<button wx:if="{{(item.ACTIVITY_JOIN_STATUS==1||item.ACTIVITY_JOIN_STATUS==0) && item.ACTIVITY_JOIN_IS_CHECKIN==0}}" bindtap="bindCancelTap" data-id="{{item._id}}" class="btn mid bg-grey light"><text class="icon-close"></text>取消</button>
+				</view>
+
+			</view>
+
+			<!--load begin-->
+			<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+			<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+			<!--load end-->
+
+		</view>
+		<!-- List END -->
+
+	</cmpt-comm-list>
+
+	<!--  button Begin -->
+	<!--  button END -->
+
+</block>

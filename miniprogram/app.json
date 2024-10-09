@@ -1,0 +1,103 @@
+{
+	"pages": [
+		"projects/house/pages/default/index/default_index",
+		"projects/house/pages/about/index/about_index",
+		"projects/house/pages/search/search",
+		"projects/house/pages/my/index/my_index",
+		"projects/house/pages/my/reg/my_reg",
+		"projects/house/pages/my/edit/my_edit",
+		"projects/house/pages/my/foot/my_foot",
+		"projects/house/pages/my/fav/my_fav",
+		"projects/house/pages/news/index/news_index",
+		"projects/house/pages/news/detail/news_detail", 
+		"projects/house/pages/admin/news/list/admin_news_list",
+		"projects/house/pages/admin/news/add/admin_news_add",
+		"projects/house/pages/admin/news/edit/admin_news_edit",
+		"projects/house/pages/admin/setup/about/admin_setup_about",
+		"projects/house/pages/admin/setup/about_list/admin_setup_about_list",
+		"projects/house/pages/admin/setup/qr/admin_setup_qr",
+		"projects/house/pages/admin/index/home/admin_home",
+		"projects/house/pages/admin/index/login/admin_login",
+		"projects/house/pages/admin/content/admin_content",
+		"projects/house/pages/admin/mgr/log/admin_log_list",
+		"projects/house/pages/admin/mgr/edit/admin_mgr_edit",
+		"projects/house/pages/admin/mgr/list/admin_mgr_list",
+		"projects/house/pages/admin/mgr/add/admin_mgr_add",
+		"projects/house/pages/admin/mgr/pwd/admin_mgr_pwd",
+		"projects/house/pages/admin/user/list/admin_user_list",
+		"projects/house/pages/admin/user/detail/admin_user_detail",
+		"projects/house/pages/admin/user/export/admin_user_export",  
+		"projects/house/pages/activity/index/activity_index",
+		"projects/house/pages/activity/detail/activity_detail",
+		"projects/house/pages/activity/join/activity_join",
+		"projects/house/pages/activity/my_join_list/activity_my_join_list",
+		"projects/house/pages/activity/my_join_detail/activity_my_join_detail",
+		"projects/house/pages/activity/my_join_self/activity_my_join_self", 
+		"projects/house/pages/admin/activity/join_list/admin_activity_join_list",
+		"projects/house/pages/admin/activity/self/admin_activity_self",
+		"projects/house/pages/admin/activity/export/admin_activity_export",
+		"projects/house/pages/admin/activity/scan/admin_activity_scan",
+		"projects/house/pages/admin/activity/list/admin_activity_list",
+		"projects/house/pages/admin/activity/add/admin_activity_add",
+		"projects/house/pages/admin/activity/edit/admin_activity_edit", 
+		"projects/house/pages/vote/index/vote_index",
+		"projects/house/pages/vote/detail/vote_detail",
+		"projects/house/pages/admin/vote/list/admin_vote_list",
+		"projects/house/pages/admin/vote/add/admin_vote_add",
+		"projects/house/pages/admin/vote/edit/admin_vote_edit",
+		"projects/house/pages/vote/my_join_list/vote_my_join_list",
+		"projects/house/pages/task/add/task_add",
+		"projects/house/pages/task/my_list/task_my_list",
+		"projects/house/pages/task/edit/task_edit",
+		"projects/house/pages/admin/task/list/admin_task_list",
+		"projects/house/pages/admin/task/detail/admin_task_detail",
+		"projects/house/pages/admin/task/export/admin_task_export",
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#0061AE",
+		"navigationBarTitleText": "智慧物业小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#0061AE",
+		"list": [
+			{
+				"pagePath": "projects/house/pages/default/index/default_index",
+				"text": "服务",
+				"iconPath": "/projects/house/images/tabbar/service.png",
+				"selectedIconPath": "/projects/house/images/tabbar/service_cur.png"
+			}, 
+			{
+				"pagePath": "projects/house/pages/activity/index/activity_index",
+				"text": "社区活动",
+				"iconPath": "/projects/house/images/tabbar/activity.png",
+				"selectedIconPath": "/projects/house/images/tabbar/activity_cur.png"
+			}, 
+			{
+				"pagePath": "projects/house/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/house/images/tabbar/my.png",
+				"selectedIconPath": "/projects/house/images/tabbar/my_cur.png"
+			}
+		]
+	}, 
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

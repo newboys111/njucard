@@ -1,0 +1,27 @@
+<cmpt-comm-list wx:if="{{isLoad}}" type="my-vote" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="vote/my_list" isTotalMenu="{{true}}" topBottom="120" placeholder="搜索标题" returnUrl='/pages/my/vote/my_vote' bind:list="myCommListListener">
+
+	<!-- List Begin -->
+	<view class="text-pic-list-box">
+		<view wx:for="{{dataList.list}}" wx:key="key" class="item shadow item-simple" bindtap="url" data-url="../detail/vote_detail?id={{item.VOTE_JOIN_VOTE_ID}}">
+			<view class="simple">
+				<view class="simple-right">
+					<view class="simple-title content-cut-one">{{item.vote.VOTE_TITLE}}</view>
+					<view class="simple-desc">
+						选项：<text class="text-project">{{item.VOTE_JOIN_ITEM_LABEL}}</text> 
+					</view>
+					<view class="simple-desc">
+						<text class="margin-right-s">{{item.VOTE_JOIN_ADD_TIME}}</text>
+						<button catchtap="bindCancelTap" data-id="{{item._id}}" data-vid="{{item.VOTE_JOIN_VOTE_ID}}" class="btn mid bg-grey light"><text class="icon-close"></text>取消投票</button> 
+					</view>
+				</view>
+			</view>
+
+		</view>
+
+		<!--load begin-->
+		<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+	</view>
+	<!-- List END -->
+</cmpt-comm-list>
